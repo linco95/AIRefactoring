@@ -50,10 +50,7 @@ public class GameBoard : MonoBehaviour
         winState = new List<int>(state);
         return true;
     }
-    public void Update()
-    {
-
-    }
+    
     /// <summary>
     /// Shuffle the board by randomly doing "steps" moves
     /// </summary>
