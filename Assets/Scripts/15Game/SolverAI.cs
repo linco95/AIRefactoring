@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NeuralNetwork;
 using System.IO;
 
 [CreateAssetMenu(fileName = "AIController", menuName = "Controllers/AIController", order = 1)]
