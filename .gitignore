@@ -77,4 +77,4 @@ crashlytics-build.properties
 /TrainingData.dat
 
 # Ignore test scenes that were left behind
-/[Ii]nitTestScene*
+InitTestScene*
