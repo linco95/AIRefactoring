@@ -75,3 +75,6 @@ crashlytics-build.properties
 
 # Ignore local training data produced while using the player controller
 /TrainingData.dat
+
+# Ignore test scenes that were left behind
+/[Ii]nitTestScene*.unity
