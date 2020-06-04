@@ -78,3 +78,6 @@ crashlytics-build.properties
 
 # Ignore test scenes that were left behind
 InitTestScene*
+
+# Ignore generated code coverage reports
+/CodeCoverage
