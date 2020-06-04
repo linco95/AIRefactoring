@@ -62,22 +62,6 @@ public class GameBoard : MonoBehaviour
             while (!moveCell((Direction)Random.Range(0, 4))) { }
         }
     }
-
-    public void randomShuffle()
-    {
-        List<int> pickedValues = new List<int>();
-
-        for (int i = 0; i < state.Count; ++i)
-        {
-            int nextIndex;
-            do
-            {
-                nextIndex = Random.Range(0, state.Count);
-            } while (pickedValues.Contains(nextIndex));
-            state[i] = nextIndex;
-            pickedValues.Add(nextIndex);
-        }
-    }
     public bool moveCell(Direction dir)
     {
         if (dir == Direction.NONE) return true;
