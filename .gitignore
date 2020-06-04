@@ -81,3 +81,6 @@ InitTestScene*
 
 # Ignore generated code coverage reports
 /CodeCoverage
+
+Ignore vscode config files
+/.vscode/*
