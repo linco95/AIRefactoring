@@ -126,19 +126,6 @@ public class GameBoard : MonoBehaviour
         updateCells();
     }
 
-    public void printState()
-    {
-        int size = (int)Mathf.Sqrt(state.Count);
-        string output = "";
-        for (int i = 0; i < state.Count; ++i)
-        {
-            if (i % size == 0)
-                output += '\n';
-            output += state[i] + " ";
-        }
-        print(output + '\n');
-    }
-
     // END Interface (Private functions)
     private void swapCells(Vector2 coords)
     {
