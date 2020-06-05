@@ -62,6 +62,24 @@ namespace Tests
         }
 
         [Test]
+        public void ShouldMoveRight()
+        {
+            gameBoard.loadState(new List<int> { 1, 2, 3, 4, 5, 6, 7, 0, 8 });
+            gameBoard.moveCell(EAST);
+
+            Assert.True(gameBoard.saveState().SequenceEqual(EXPECTEDSTARTSTATE));
+        }
+
+        [Test]
+        public void ShouldMoveDown()
+        {
+            gameBoard.loadState(new List<int> { 1, 2, 3, 4, 5, 0, 7, 8, 6 });
+            gameBoard.moveCell(SOUTH);
+
+            Assert.True(gameBoard.saveState().SequenceEqual(EXPECTEDSTARTSTATE));
+        }
+
+        [Test]
         public void ShouldShuffle()
         {
             gameBoard.shuffleBoard(150);
@@ -78,6 +96,36 @@ namespace Tests
             Assert.True(gameBoard.saveState().SequenceEqual(exampleState));
         }
 
+        [Test]
+        public void ThrowsOnNegativeSize()
+        {
+            Assert.Throws<System.ArgumentOutOfRangeException>(() => gameBoard.createBoard(-1), "Should not be able to create an invalid board size");
+        }
+
+        [Test]
+        public void ThrowsOnZeroSize()
+        {
+            Assert.Throws<System.ArgumentOutOfRangeException>(() => gameBoard.createBoard(0), "Should not be able to create board with size of 0");
+        }
+
+        [Test]
+        public void ThrowsOnNegativeShuffleSteps()
+        {
+            Assert.Throws<System.ArgumentOutOfRangeException>(() => gameBoard.shuffleBoard(-1), "Should not be able to shuffle with invalid argument");
+        }
+        [Test]
+        public void ThrowsOnZeroShuffleSteps()
+        {
+            Assert.Throws<System.ArgumentOutOfRangeException>(() => gameBoard.shuffleBoard(0), "Should not be able to shuffle with zero steps");
+        }
+
+        [Test]
+        public void ThrowsOnInvalidState()
+        {
+            var invalidState = new List<int> { 1, 5, 8, 0, 3 };
+
+            Assert.Throws<System.ArgumentException>(() => gameBoard.loadState(invalidState), "Should not be able to load invalid state");
+        }
 
         [SetUp]
         public void Setup()
