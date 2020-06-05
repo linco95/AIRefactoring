@@ -266,7 +266,7 @@ PrefabInstance:
     - target: {fileID: 114132315209762032, guid: 9ac6d57c719a64246bdf8760043ac987,
         type: 3}
       propertyPath: shuffleSteps
-      value: 1500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114132315209762032, guid: 9ac6d57c719a64246bdf8760043ac987,
         type: 3}
